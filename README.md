@@ -13,5 +13,5 @@ Compile the program with GCC:
 
 - gcc keyc.c -o keyc -levdev
 
-## Example usage. Keys are store in .capt.dat hidden file in the same folder
+## Example usage. Requires ROOT (Keys are stored in .capt.dat ; a hidden file found in the same folder)
 sudo ./keyc&
