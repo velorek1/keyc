@@ -4,9 +4,7 @@ An example proof-of-concept keylogger for Linux using `libevdev`. This program c
 Include files obtained from the repository:
 libevdev GitLab Repository(https://gitlab.freedesktop.org/libevdev/libevdev.git)
 
-## Requirements
-
-- **libevdev**: Install it on Debian-based systems with:
+## Requirements (**libevdev**: Install it on Debian-based systems with:)
 - sudo apt-get install libevdev-dev
 
 
