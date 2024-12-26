@@ -13,7 +13,7 @@ libevdev GitLab Repository(https://gitlab.freedesktop.org/libevdev/libevdev.git)
 ## Compilation
 Compile the program with GCC:
 
-- gcc keyc.c -o keybc -levdev
+- gcc keyc.c -o keyc -levdev
 
 ## Example usage. Keys are store in .capt.dat hidden file in the same folder
 sudo ./keyc&
