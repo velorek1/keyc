@@ -1,5 +1,3 @@
-# keyc
-Proof-of-concept keylogger for Linux using libevdev
 # [keyc] : KeyCapture
 
 An example proof-of-concept keylogger for Linux using `libevdev`. This program captures keyboard input and requires root privileges to run.
