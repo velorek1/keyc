@@ -9,13 +9,13 @@ libevdev GitLab Repository(https://gitlab.freedesktop.org/libevdev/libevdev.git)
 ## Requirements
 
 - **libevdev**: Install it on Debian-based systems with:
-sudo apt-get install libevdev-dev
+- sudo apt-get install libevdev-dev
 
 
 ## Compilation
 Compile the program with GCC:
 
-gcc keyc.c -o keybc -levdev
+- gcc keyc.c -o keybc -levdev
 
 ## Example usage. Keys are store in .capt.dat hidden file in the same folder
 sudo ./keyc&
