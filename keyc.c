@@ -5,7 +5,7 @@
  * Requirements [libevdev]
  *  (debian-based) sudo apt-get install libevdev-dev
  * Include files obtained from repository : https://gitlab.freedesktop.org/libevdev/libevdev.git
- *  - gcc keyb.c -o keyb.c -levdev
+ *  - gcc keyc.c -o keyc.c -levdev
  * Coded by v3l0r3k DECEMBER 2024
  * 
  * Usage (with root access):
